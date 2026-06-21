@@ -1,0 +1,192 @@
+<section>
+</h2>
+
+<h2 class="title">  ITS BEEN TWO YEARSSS
+<div class="slider-container">
+
+    <button class="nav prev">❮</button>
+
+    <div class="slider" id="slider">
+
+        <div class="slide">
+        <video controls>
+        <source src="WhatsApp Video 2026-06-21 at 6.26.20 PM.mp4" type="video/mp4">
+         </video>
+        </div> 
+        <div class="slide">
+        <video controls>
+        <source src="WhatsApp Video 2026-06-21 at 7.19.50 PM.mp4" type="video/mp4">
+         </video>
+        </div> 
+         <div class="slide">
+        <video controls>
+        <source src="WhatsApp Video 2026-06-21 at 7.18.47 PM.mp4" type="video/mp4">
+         </video>
+        </div> 
+    
+
+    </div>
+
+    <button class="nav next">❯</button>
+
+</div>
+  <article>
+        <div class="icons"
+        > <H3> These are a collection of videos of you that are literally SO BEAUTIFUL BGAD i watch thee whenever i wanna cheer myself up and im so glad and lucky to have you alby MWAH MWAH </H3></div>
+    </article>
+
+</section>
+
+<style>
+
+.slider-container{
+    position:relative;
+    max-width:1000px;
+    margin:auto;
+    overflow:hidden;
+}
+
+.slider{
+    display:flex;
+    transition:transform .6s ease;
+}
+
+.slide{
+    min-width:100%;
+    padding:10px;
+}
+
+.slide img{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+.slide video{
+    width:100%;
+    height:600px;
+    object-fit:cover;
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+.nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(20px);
+    color:white;
+    font-size:26px;
+    z-index:100;
+    transition:.3s;
+}
+
+.nav:hover{
+    background:rgba(255,255,255,.3);
+    transform:translateY(-50%) scale(1.08);
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+.video-container {
+  width: 600px;
+  height: 400px;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover, contain, fill, none */
+}
+@media(max-width:768px){
+
+    .slide img{
+        height:400px;
+    }
+
+    .nav{
+        width:50px;
+        height:50px;
+        font-size:22px;
+    }
+}
+
+</style>
+
+<script>
+
+const slider = document.getElementById("slider");
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function showSlide(index){
+
+    if(index < 0){
+        index = slides.length - 1;
+    }
+
+    if(index >= slides.length){
+        index = 0;
+    }
+
+    currentSlide = index;
+
+    slider.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
+}
+
+document
+.querySelector(".next")
+.addEventListener("click", () => {
+    showSlide(currentSlide + 1);
+});
+
+document
+.querySelector(".prev")
+.addEventListener("click", () => {
+    showSlide(currentSlide - 1);
+});
+
+// Swipe support
+
+let startX = 0;
+
+slider.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", (e) => {
+
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if(diff > 50){
+        showSlide(currentSlide + 1);
+    }
+
+    if(diff < -50){
+        showSlide(currentSlide - 1);
+    }
+
+});
+
+// Auto slide every 5 seconds
+
+setInterval(() => {
+    showSlide(currentSlide + 1);
+}, 5000);
+
+</script>

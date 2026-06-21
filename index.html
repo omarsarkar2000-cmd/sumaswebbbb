@@ -1,0 +1,203 @@
+<head>
+    <style>
+        header{letter-spacing: 6px;
+               background-color:darkslateblue;
+               padding: 45px;
+               color:white;
+               }
+        body {text-align: center;}
+        .card{border:1px solid #ccc;
+              background-color: ivory;
+              padding: 25px;}
+        a {
+    color: black; 
+    text-decoration: none; 
+}
+
+    </style>
+ </head>
+ <body>
+    <header>
+     <h1 style="font-family:verdana">HI MY BABYYYY </h1>
+     <h3 style="font-family:verdana">I hope youre doing welll</h3>
+    </header>
+    <section>
+        <p>
+            Hi my love i havent done anything recently for you so I wanted to try and do smth and i wanted to learn a skill while doing so too so this is for you my beautiful adorable loveeee
+            <img src="image cute'.jpg">
+        </p>
+    </section>
+    <section>
+        <article class="card">
+            <div class="icons"><img src="7fa51075-26a1-4665-ae53-043228fa933b.jpg" ><br>
+             we took pictures after you got your nails done and kept walkingg    
+            </div>
+        </article>
+        <article class="card">
+            <div class="icons"><a href="Untitled-1.html">
+                <img src="cat jeans.jpg" ><br>
+                </a>
+                *psps hint click za picture alby*
+            </div>
+        </article>
+    </section>
+    <section>
+        <article class="card">
+            <div class="icons">
+                <img src="random1.jpeg">
+                LOOOK MY CUTIE CUTIEEEE YOURE SO ADORABLEEE LEGIT I LOVE YOUR <a href="trying.html">RANDOM</a> POSESSS HEHEHEHE
+            </div>     
+        </article>
+    </section>
+
+     <section>
+        <article class="card">
+            <div class="icons">
+               <a href="Drawing.html"> <img src="WhatsApp Image 2026-02-26 at 2.27.04 AM (1).jpeg"></a>
+                DRAWINGS ON YOUUUUUU
+            </div>     
+        </article>
+    </section>
+    <section>
+        <article class="card">
+            <div class="icons">
+               <img src="loookin good (1).jpeg"><br>
+               okay so throwback to this cuz gosh you look so beautiful in this altho i didnt like the orange ish tint or bronzer but girl you look so beautiful
+               like my god bgad i just cant you look <a href="goofy web.html"> gorgeous</a> seriously like AAAAAAAAAA also you have to find the word that takes you to the subsection so goodluckkkkk mwah mwah 
+            </div>     
+        </article>
+    </section>
+     <section>
+        <article class="card">
+            <div class="icons">
+              <a href="miss.html"> <img src="miss you  (1).jpeg"></a><br>
+               I <a href="memories.html">miss </a> you my love like so so soooo much seriously also i never noticed before but the logo is like literally facing you perfectly also this outfit was really nice 
+
+      
+            </div>     
+        </article>
+    </section>
+    <article>
+        <div class="icons"
+        > <H3> WE PASSED TWO <a href="experiment.html"> YEARSSSSSS</a></H3></div>
+    </article>
+     <div class="counter-grid">
+        <div>
+            <span id="days">0</span>
+            <small>Days</small>
+        </div>
+
+        <div>
+            <span id="hours">0</span>
+            <small>Hours</small>
+        </div>
+
+        <div>
+            <span id="minutes">0</span>
+            <small>Minutes</small>
+        </div>
+
+        <div>
+            <span id="seconds">0</span>
+            <small>Seconds</small>
+        </div>
+    </div>
+</div>
+
+<style>
+
+.love-counter{
+    text-align:center;
+    margin:80px auto;
+    padding:40px 20px;
+}
+
+.love-counter h2{
+    font-size:2.5rem;
+    margin-bottom:30px;
+    color:white;
+}
+
+.counter-grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.counter-grid div{
+    min-width:140px;
+    padding:25px;
+    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(20px);
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.counter-grid span{
+    display:block;
+    font-size:3rem;
+    font-weight:bold;
+    color:#f7d26a;
+}
+
+.counter-grid small{
+    display:block;
+    margin-top:8px;
+    color:white;
+    opacity:.8;
+}
+
+@media(max-width:768px){
+
+    .counter-grid div{
+        min-width:110px;
+        padding:20px;
+    }
+
+    .counter-grid span{
+        font-size:2rem;
+    }
+
+    .love-counter h2{
+        font-size:2rem;
+    }
+}
+
+</style>
+
+<script>
+
+
+const startDate = new Date("2024-06-22T03:23:00");
+
+function updateCounter(){
+
+    const now = new Date();
+
+    const diff = now - startDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
+
+    const minutes = Math.floor(diff / (1000 * 60)) % 60;
+
+    const seconds = Math.floor(diff / 1000) % 60;
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,'0');
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,'0');
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,'0');
+}
+
+updateCounter();
+setInterval(updateCounter,1000);
+
+</script>
+</body>

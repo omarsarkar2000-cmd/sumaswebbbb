@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CONGRATS ALBYYYY</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:linear-gradient(135deg,#5b2be0,#3a076d);min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#wrap{width:min(95vw,900px);text-align:center;color:#fff}
+h1{margin-bottom:10px} p{margin-bottom:18px}
+#book{position:relative;margin:auto;width:min(90vw,700px);aspect-ratio:7/5;perspective:1800px}
+.page{
+ position:absolute;inset:0;background:#fff;border-radius:8px;overflow:hidden;
+ transform-origin:left center;transition:transform .8s;
+ box-shadow:0 12px 30px rgba(0,0,0,.3);backface-visibility:hidden;
+ display:flex;flex-direction:column;color:#333;
+}
+.page img{flex:1;width:100%;object-fit: contain;
+    background: white;}
+.caption{padding:12px;font-size:1.1rem}
+.page.flipped{transform:rotateY(-180deg)}
+.controls{margin-top:20px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+button{padding:10px 18px;border:none;border-radius:999px;cursor:pointer;font-size:1rem}
+#final{position:absolute;inset:0;background:#fff;color:#333;border-radius:8px;
+display:flex;align-items:center;justify-content:center;flex-direction:column;padding:30px}
+#hint{margin-top:10px;font-size:.95rem;opacity:.9}
+.confetti{position:fixed;width:8px;height:8px;top:-10px;animation:fall linear infinite}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+</style>
+</head>
+<body>
+<div id="wrap">
+<h1>IM SO PROUD OF YOU </h1>
+
+<div id="book">
+<div id="final">
+<h2>SEEIOUSLY YOU DID IT YOURE SO AMAZING IM GENUINELYSO SO SO PROUD YOU DONT UNDERSTAND AND YOU LOOKED SO ETHEREAL AND STUNNING WHILE AT IT TOO I FEEL SO LUCKY BGAD YOURE JUST SO PRETTTYYYYYYYYY MWAH MWAH </h2>
+
+</div>
+<div class="page"><img src="GRAD1.jpg"><div class="caption">GENUINELY STUNNING
+</div></div>
+<div class="page"><img src="GRAD 2.jpg"><div class="caption"></div></div>
+<div class="page"><img src="GRAD 3.jpg"><div class="caption"></div></div>
+<div class="page"><img src="GRAD 4.jpg"><div class="caption">CUTSIE PATOOTSIE BABYYYY</div></div>
+</div>
+<div class="controls">
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+let current=0;
+pages.forEach((p,i)=>{p.style.zIndex=pages.length-i;p.onclick=()=>{if(i===current)next();};});
+function next(){if(current<pages.length){pages[current].classList.add('flipped');current++;}}
+function prev(){if(current>0){current--;pages[current].classList.remove('flipped');}}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev();});
+let sx=0;
+document.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+document.addEventListener('touchend',e=>{
+ let dx=e.changedTouches[0].clientX-sx;
+ if(dx<-40)next();
+ if(dx>40)prev();
+});
+for(let i=0;i<90;i++){
+ let c=document.createElement('div');c.className='confetti';
+ c.style.left=Math.random()*100+'vw';
+ c.style.background=`hsl(${Math.random()*360},100%,60%)`;
+ let s=4+Math.random()*7;c.style.width=s+'px';c.style.height=s+'px';
+ c.style.animationDuration=(3+Math.random()*3)+'s';
+ c.style.animationDelay=(Math.random()*4)+'s';
+ document.body.appendChild(c);
+}
+</script>
+</body></html>
